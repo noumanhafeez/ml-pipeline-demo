@@ -59,7 +59,7 @@ matplotlib==3.10.8
 mdurl==0.1.2
 multidict==6.7.1
 networkx==3.4.2
-numpy==2.4.3
+numpy==2.2.6
 omegaconf==2.3.0
 orjson==3.11.7
 packaging==26.0

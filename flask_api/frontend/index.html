@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            margin: auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>House Price Prediction</h1>
+
+<form id="predictionForm">
+
+    <!-- Example 13 features (adjust names EXACTLY as your dataset) -->
+    <input type="number" name="area" placeholder="Area" required>
+    <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+    <input type="number" name="bathrooms" placeholder="Bathrooms" required>
+    <input type="number" name="stories" placeholder="Stories" required>
+    <input type="number" name="parking" placeholder="Parking" required>
+
+    <input type="text" name="mainroad" placeholder="mainroad (yes/no)" required>
+    <input type="text" name="guestroom" placeholder="guestroom (yes/no)" required>
+    <input type="text" name="basement" placeholder="basement (yes/no)" required>
+    <input type="text" name="hotwaterheating" placeholder="hotwaterheating (yes/no)" required>
+    <input type="text" name="airconditioning" placeholder="airconditioning (yes/no)" required>
+    <input type="text" name="prefarea" placeholder="prefarea (yes/no)" required>
+
+    <input type="text" name="furnishingstatus" placeholder="furnishingstatus" required>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+<div id="result"></div>
+
+<script>
+document.getElementById("predictionForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    let data = {};
+
+    formData.forEach((value, key) => {
+        if (!isNaN(value) && value !== "") {
+            data[key] = Number(value);
+        } else {
+            data[key] = value;
+        }
+    });
+
+    try {
+        const response = await fetch("http://127.0.0.1:5000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        document.getElementById("result").innerText =
+            "Predicted Price: " + result.prediction;
+
+    } catch (error) {
+        document.getElementById("result").innerText =
+            "Error: Could not connect to API";
+    }
+});
+</script>
+
+</body>
+</html>

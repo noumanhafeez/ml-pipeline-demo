@@ -1,0 +1,14 @@
+2026-03-18 15:36:28,267 - train - INFO - Starting training with dataset: data/housing.csv and target column: price
+2026-03-18 15:36:28,272 - train - INFO - Data loaded. Shape: (545, 13)
+2026-03-18 15:36:28,274 - train - INFO - Data split into train and test sets. X_train: (436, 12), X_test: (109, 12), y_train: (436,), y_test: (109,)
+2026-03-18 15:36:28,274 - train - INFO - Pipeline created successfully.
+2026-03-18 15:36:28,284 - train - INFO - Pipeline training completed.
+2026-03-18 15:36:28,289 - train - INFO - Model R^2 score on test data: 0.6529
+2026-03-18 15:36:28,292 - train - INFO - Trained model saved at: artifacts/house_price_pipeline.pkl
+2026-03-18 15:56:48,649 - train - INFO - Starting training with dataset: data/housing.csv and target column: price
+2026-03-18 15:56:48,657 - train - INFO - Data loaded. Shape: (545, 13)
+2026-03-18 15:56:48,661 - train - INFO - Data split into train and test sets. X_train: (436, 12), X_test: (109, 12), y_train: (436,), y_test: (109,)
+2026-03-18 15:56:48,662 - train - INFO - Pipeline created successfully.
+2026-03-18 15:56:48,672 - train - INFO - Pipeline training completed.
+2026-03-18 15:56:48,677 - train - INFO - Model R^2 score on test data: 0.6529
+2026-03-18 15:56:48,820 - train - INFO - Trained model saved at: artifacts/house_price_pipeline.pkl

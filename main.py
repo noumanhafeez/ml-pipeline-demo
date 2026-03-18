@@ -1,10 +1,21 @@
 # main.py
-from model.train import train  # import train function
-# No need to import src.utils here, train handles logging
+from model.train import train
+from src.utils import get_logger
+
+# Create a logger for this main script
+logger = get_logger("main", "logs/main.log")
 
 if __name__ == "__main__":
-    data_path = "data/housing.csv"
-    target_column = "price"
+    try:
+        data_path = "data/housing.csv"  # replace with your dataset path
+        target_column = "price"         # replace with your target column name
 
-    # Run training
-    model_pipeline = train(data_path, target_column)
+        logger.info(f"Starting main execution with dataset: {data_path} and target column: {target_column}")
+
+        # Train the model
+        model_pipeline = train(data_path, target_column)
+
+        logger.info("Main execution completed successfully.")
+    except Exception as e:
+        logger.error(f"Main execution failed: {e}")
+        raise

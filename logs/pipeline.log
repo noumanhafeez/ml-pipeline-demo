@@ -4,3 +4,9 @@
 2026-03-18 15:56:48,661 - pipeline - INFO - Starting pipeline creation.
 2026-03-18 15:56:48,662 - pipeline - INFO - Preprocessor created successfully.
 2026-03-18 15:56:48,662 - pipeline - INFO - Pipeline created successfully with LinearRegression as regressor.
+2026-03-18 17:06:56,431 - pipeline - INFO - Starting pipeline creation.
+2026-03-18 17:06:56,431 - pipeline - INFO - Preprocessor created successfully.
+2026-03-18 17:06:56,431 - pipeline - INFO - Pipeline created successfully with LinearRegression as regressor.
+2026-03-18 17:08:38,441 - pipeline - INFO - Starting pipeline creation.
+2026-03-18 17:08:38,441 - pipeline - INFO - Preprocessor created successfully.
+2026-03-18 17:08:38,441 - pipeline - INFO - Pipeline created successfully with LinearRegression as regressor.

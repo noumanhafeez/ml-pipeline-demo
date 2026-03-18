@@ -2,3 +2,7 @@
 2026-03-18 15:36:28,274 - preprocess - INFO - Preprocessor created successfully.
 2026-03-18 15:56:48,661 - preprocess - INFO - Starting preprocessing. Binary columns: ['mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'prefarea'], Multi-category columns: ['furnishingstatus']
 2026-03-18 15:56:48,662 - preprocess - INFO - Preprocessor created successfully.
+2026-03-18 17:06:56,431 - preprocess - INFO - Starting preprocessing. Binary columns: ['mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'prefarea'], Multi-category columns: ['furnishingstatus']
+2026-03-18 17:06:56,431 - preprocess - INFO - Preprocessor created successfully.
+2026-03-18 17:08:38,441 - preprocess - INFO - Starting preprocessing. Binary columns: ['mainroad', 'guestroom', 'basement', 'hotwaterheating', 'airconditioning', 'prefarea'], Multi-category columns: ['furnishingstatus']
+2026-03-18 17:08:38,441 - preprocess - INFO - Preprocessor created successfully.

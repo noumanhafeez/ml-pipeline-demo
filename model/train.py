@@ -5,7 +5,7 @@ from src.data_loader import load_data
 from src.data_splitter import split_data
 from src.pipeline import create_pipeline
 from src.utils import get_logger
-from src.report import plot_predictions, save_metrics  # ✅ Import report functions
+from src.report import plot_predictions, save_metrics
 
 # Create a logger for this module
 logger = get_logger("train", "logs/train.log")

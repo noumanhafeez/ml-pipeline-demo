@@ -1,0 +1,2 @@
+2026-03-18 15:56:48,815 - report - INFO - Saved Predicted vs Actual plot to artifacts/prediction_vs_actual.png
+2026-03-18 15:56:48,817 - report - INFO - Saved metrics to artifacts/metrics.csv

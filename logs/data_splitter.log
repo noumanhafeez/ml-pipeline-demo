@@ -1,0 +1,4 @@
+2026-03-18 15:36:28,272 - data_splitter - INFO - Starting data split. Test size: 0.2, Random state: 42
+2026-03-18 15:36:28,274 - data_splitter - INFO - Data split completed. Training shape: X=(436, 12), y=(436,); Testing shape: X=(109, 12), y=(109,)
+2026-03-18 15:56:48,657 - data_splitter - INFO - Starting data split. Test size: 0.2, Random state: 42
+2026-03-18 15:56:48,660 - data_splitter - INFO - Data split completed. Training shape: X=(436, 12), y=(436,); Testing shape: X=(109, 12), y=(109,)

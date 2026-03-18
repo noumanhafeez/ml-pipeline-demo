@@ -1,24 +1,49 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from utils import get_logger
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
+from .utils import get_logger
 
-logger = get_logger("Preprocess")
+logger = get_logger("preprocess", "logs/preprocess.log")
 
-def load_data(path="data/house_prices.csv"):
-    logger.info(f"Loading data from {path}")
-    df = pd.read_csv(path)
-    logger.info(f"Data shape: {df.shape}")
-    return df
+def preprocess(df: pd.DataFrame) -> ColumnTransformer:
+    """
+    Preprocess the dataset using ColumnTransformer.
 
-def preprocess(df):
-    logger.info("Starting preprocessing")
-    # Example: simple features
-    X = df[['square_feet', 'num_rooms']]  # select relevant features
-    y = df['price']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    logger.info(f"Split data: Train {X_train.shape}, Test {X_test.shape}")
-    return X_train, X_test, y_train, y_test
+    - Binary features (yes/no) -> 0/1
+    - Multi-category features -> one-hot encoding
+    - Numeric features -> passed through
+    Returns a ColumnTransformer ready to fit or transform.
+    """
+    try:
+        # Define columns
+        binary_cols = ['mainroad', 'guestroom', 'basement',
+                       'hotwaterheating', 'airconditioning', 'prefarea']
+        multi_cat_cols = ['furnishingstatus']
 
-if __name__ == "__main__":
-    df = load_data()
-    preprocess(df)
+        logger.info(f"Starting preprocessing. Binary columns: {binary_cols}, Multi-category columns: {multi_cat_cols}")
+
+        # Binary encoder (yes->1, no->0)
+        binary_encoder = OrdinalEncoder(categories=[['no', 'yes']] * len(binary_cols))
+
+        # One-hot encoder
+        onehot_encoder = OneHotEncoder(drop='first', dtype=int)
+
+        # ColumnTransformer
+        preprocessor = ColumnTransformer(
+            transformers=[
+                ('binary', binary_encoder, binary_cols),
+                ('onehot', onehot_encoder, multi_cat_cols)
+            ],
+            remainder='passthrough'  # keep numeric columns unchanged
+        )
+
+        logger.info("Preprocessor created successfully.")
+
+        return preprocessor
+
+    except KeyError as e:
+        logger.error(f"Column not found in DataFrame: {e}")
+        raise
+    except Exception as e:
+        logger.error(f"Error during preprocessing: {e}")
+        raise

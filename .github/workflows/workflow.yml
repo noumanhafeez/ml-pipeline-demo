@@ -33,10 +33,10 @@ jobs:
           pip install pytest matplotlib seaborn  # for tests and plotting
 
       - name: Train model
-        run: python src/train.py
+        run: python main.py
 
       - name: Upload artifacts (model + reports)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ml-artifacts
           path: artifacts/

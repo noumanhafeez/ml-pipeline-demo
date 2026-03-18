@@ -2,3 +2,7 @@
 2026-03-18 15:36:28,293 - main - INFO - Main execution completed successfully.
 2026-03-18 15:56:48,648 - main - INFO - Starting main execution with dataset: data/housing.csv and target column: price
 2026-03-18 15:56:48,820 - main - INFO - Main execution completed successfully.
+2026-03-18 17:06:56,419 - main - INFO - Starting main execution with dataset: data/housing.csv and target column: price
+2026-03-18 17:06:58,647 - main - INFO - Main execution completed successfully.
+2026-03-18 17:08:38,420 - main - INFO - Starting main execution with dataset: data/housing.csv and target column: price
+2026-03-18 17:08:38,832 - main - INFO - Main execution completed successfully.

@@ -16,7 +16,6 @@ if __name__ == "__main__":
         model_pipeline = train(data_path, target_column)
 
         logger.info("Main execution completed successfully.")
-
     except Exception as e:
         logger.error(f"Main execution failed: {e}")
         raise

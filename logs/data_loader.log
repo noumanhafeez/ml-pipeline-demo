@@ -2,3 +2,7 @@
 2026-03-18 15:36:28,271 - data_loader - INFO - Data loaded successfully. Shape: (545, 13)
 2026-03-18 15:56:48,649 - data_loader - INFO - Loading data from data/housing.csv
 2026-03-18 15:56:48,657 - data_loader - INFO - Data loaded successfully. Shape: (545, 13)
+2026-03-18 17:06:56,422 - data_loader - INFO - Loading data from data/housing.csv
+2026-03-18 17:06:56,427 - data_loader - INFO - Data loaded successfully. Shape: (545, 13)
+2026-03-18 17:08:38,421 - data_loader - INFO - Loading data from data/housing.csv
+2026-03-18 17:08:38,433 - data_loader - INFO - Data loaded successfully. Shape: (545, 13)
